@@ -1,0 +1,47 @@
+recon:
+  output_dir: results
+  log_level: INFO
+
+enumeration:
+  tools:
+    - subfinder
+    - assetfinder
+    - amass
+  timeout: 120  # seconds per tool
+
+dns:
+  timeout: 5
+  max_workers: 50
+
+scanner:
+  mode: fast  # fast | normal | slow
+  max_workers: 10
+  retry_attempts: 2
+  retry_delay: 3  # seconds
+  modes:
+    fast:
+      nmap_args: "-T4 -F --open"
+      top_ports: 100
+    normal:
+      nmap_args: "-T3 -sV --open"
+      top_ports: 1000
+    slow:
+      nmap_args: "-T2 -sV -sC --open"
+      top_ports: 65535
+
+metasploit:
+  enabled: true
+  timeout: 30
+  search_services:
+    - ssh
+    - http
+    - https
+    - ftp
+    - smb
+    - rdp
+    - mysql
+    - postgresql
+    - mongodb
+
+graph:
+  layout: cose  
