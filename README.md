@@ -13,7 +13,7 @@ gh0strecon is an automated reconnaissance tool that takes a domain name and maps
 
 ## Project Structure
 ```
-gh0strecon/\
+gh0strecon/
 ├── main.py            — pipeline entrypoint
 ├── config.yaml        — all settings
 ├── requirements.txt   — Python dependencies
